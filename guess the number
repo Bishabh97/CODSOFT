@@ -1,0 +1,27 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main() 
+{
+    int randomnumber, userGuess;
+    srand(time(NULL));
+    randomnumber = rand() % 100 + 1;
+
+    cout<<"Welcome to the Guess the Number Game!\n";
+ 
+    do {
+        cout<<"Input your guess (between 1 and 100): ";
+        cin>>userGuess;
+        if (userGuess == randomnumber) {
+            cout<<"Congratulations! You guessed the correct number.\n";
+        } else if (userGuess < randomnumber) {
+            cout<<"Number is too low. Try again!\n";
+        } else {
+            cout<<"Number is too high. Try again!\n";
+        }
+
+    } while (userGuess != randomnumber); 
+
+    return 0;
+}
